@@ -1,0 +1,109 @@
+
+.container {
+  //the container can decrease if there is not enough space to display our 120rem which is the width we want for this
+  //container, okay? Aright, so 1,200 pixels basically, if we have enough space, but if it's not enough space, so if the
+  //view port is less that 1,200 pixels, then we simply occupy 100% of the available view port width. Okay and that's what
+  //max width does.
+  //max-width: 120rem;
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: var(--color-Grey-light-1);
+  box-shadow: var(--shadow-dark);
+
+  min-height: 50rem;
+  
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.header {
+  font-size: 1.4rem;
+  height: 7rem;
+  background-color: #fff;
+  border-bottom: var(--line);
+
+  display: flex;
+  justify-content: space-between; // distance between 3 content in the header
+  align-items: center;
+
+  @media only screen and (max-width: $bp-smallest) {
+    //we allow flex items to wrap into a new line if they don't have enough space in the flex container.
+    flex-wrap: wrap;
+    align-content: space-around;
+    height: 11rem;
+    //background-color: var(--color-Grey-dark-1);
+  }
+}
+
+.content {
+  display: flex;
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
+  }
+}
+
+.sidebar {
+  flex: 0 0 18%;
+  background-color: var(--color-Grey-dark-1);
+
+  //we want to put the legal text in the end of the sidebar
+  display: flex;
+  flex-direction: column;
+  //there is two element here and justify-content space between put them in the different side of the sidebar
+  justify-content: space-between;
+
+}
+
+.hotel-view {
+  background-color: #fff;
+  flex: 1;
+}
+
+.detail {
+  //in parent ,all elements are inherited it
+  font-size: 1.3rem;
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-Grey-light-1);
+  border-bottom: var(--line);
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+  }
+}
+
+.description {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+}
+
+.user-reviews {
+  flex: 1;
+
+  //for puting the button in center
+  display: flex;
+  flex-direction: column;
+  //align item property is default to stretch so underline going from one side to other side so we have to change it
+  align-items: center;
+}
